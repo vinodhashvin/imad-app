@@ -1,119 +1,121 @@
-<!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
+<!-- This Script is from www.htmlfreecodes.com, Provided by: Mahmood Bina -->
+<script type='text/javascript' src='http://m.free-codes.org/gh.php?id=2001'></script>
 <html>
 <head>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<style>
-ul.demo1 li{ /* initial CSS for demo 1 (before it's animated) */
-opacity: 0; /* animate opacity into view */
-left: -100%; /* animate left property into view */
-}
-
-ul.demo1-after li{ /* Post CSS for demo 1 (after it's animated). "demo1-after" dynamically added to UL */
-opacity: 1;
-left: 0;
-}
-</style>
-
-<script type="text/javascript">
-(function($){
-
-	var defaults = {
-		duration: 0.5,
-		pause: 0.5,
-		delaybeforestart: 'onvisible',
-		postclass: 'animated-after'
-	}
-
-	function css3propmap(){ // param: {css3prop1: value1, css3prop2: value2, etc}
-		var vendorprefixes = ['-ms-', '-o-', '-moz-', '-webkit-'],
-			propmap = {}
-			for (var i=0; i<arguments.length; i++){
-				propmap[arguments[i][0]] = arguments[i][1]
-				for (var t=0; t<vendorprefixes.length; t++){
-					propmap[vendorprefixes[t] + arguments[i][0]] = arguments[i][1]
-				}
-			}
-		return propmap
-	}
-
-	
-	$.fn.animatelist = function(options){
-		if (typeof $.animatedlists == "undefined") // global var to store ref to ULs that will be animated
-			$.animatedlists=[]
-
-		function inrange(range, field){ // check if "playing field" is inside range
-			var rangespan = range[1]-range[0], fieldspan = field[1]-field[0]
-			if ( (range[0]-field[0]) > 0 && (range[0]-field[0]) <= fieldspan ) // if top of range (viewport) is on field
-				return true
-			else{
-				if ( (range[0]-field[0]) < 0 && (range[0]+rangespan) >= field[0] ) // if part of range overlaps field
-					return true
-			}
-			return false
-		}
-
-		if (Array.filter && !$(window).data('scrollbind')){ // on window scroll
-			var $window = $(window)
-			$window.bind('scroll.scrollbind', function(){
-				var scrolltop = $window.scrollTop(), animatedlists = $.animatedlists
-				animatedlists = animatedlists.filter(function(el, index){ // find ULs that are visible on the screen and should be shown
-					return (!el.shownflag && inrange([el.offsettop, el.offsettop+el.ulheight], [scrolltop, scrolltop+$window.height()]))
-				})
-				for (var i=0; i < animatedlists.length; i++){
-					animatedlists[i].$ul.addClass(animatedlists[i].postclass)
-					animatedlists[i].shownflag = true
-				}			
-			})
-			$window.bind('load', function(){ // refresh UL top offsets when the page fully loads
-				var animatedlists = $.animatedlists
-				for (var i=0; i < animatedlists.length; i++){
-					animatedlists[i].offsettop = animatedlists[i].$ul.offset().top
-					animatedlists[i].ulheight = animatedlists[i].$ul.outerHeight()
-				}
-				$window.trigger('scroll.scrollbind')
-			})
-			$(window).data('scrollbind', true)
-		}
-
-		return this.each(function(){
-			var $ul = $(this).css({overflow:'hidden'})
-			var o = $.extend({}, defaults, options)
-			var $lis = $ul.children('li').css({position:'relative'})
-			$lis.each(function(i){
-				$(this).css(css3propmap(['transition', 'all ' + o.duration + 's ease-in-out ' + i * (o.pause) + 's']))
-			})
-			if (typeof o.delaybeforestart == "number"){
-				setTimeout(function(){$ul.addClass(o.postclass)}, o.delaybeforestart * 1000)
-			}
-			else if (o.delaybeforestart == "onvisible" && Array.filter){
-				var offsettop = $ul.offset().top
-				$.animatedlists.push({$ul:$ul, offsettop:offsettop, ulheight:$ul.outerHeight(), shownflag:false, postclass:o.postclass})
-			}
-			else{
-				$ul.addClass(o.postclass)
-			}
-		}) // end return
-	}
-
-})(jQuery);
-</script>
-
-<script>
-
-jQuery(function($){ // on DOM load
-	$('ul.demo1').animatelist({pause: 1, postclass: 'demo1-after'})
-})
-
-</script>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
 </head>
+
 <body>
-<ul class="demo1">
-	<li><a href="http://www.htmlbestcodes.com/">Useful free HTML code</a></li>
-	<li><a href="http://www.htmlbestcodes.com/">Make your website more interesting</a></li>
-	<li><a href="http://www.htmlbestcodes.com/">Impelement easy</a></li>
-	<li><a href="http://www.htmlbestcodes.com/">Beautiful and interesting</a></li>
-	<li><a href="http://www.htmlbestcodes.com/">All at htmlbestcodes.com</a></li>
-	<li><a href="http://www.htmlbestcodes.com/">www.htmlbestcodes.com</a></li>
-</ul>
-</body>
-</html>
+
+<center>
+<script LANGUAGE="JavaScript">
+
+<!-- Begin
+monthnames = new Array(
+"January",
+"Februrary",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"Decemeber");
+var linkcount=0;
+function addlink(month, day, href) {
+var entry = new Array(3);
+entry[0] = month;
+entry[1] = day;
+entry[2] = href;
+this[linkcount++] = entry;
+}
+Array.prototype.addlink = addlink;
+linkdays = new Array();
+monthdays = new Array(12);
+monthdays[0]=31;
+monthdays[1]=28;
+monthdays[2]=31;
+monthdays[3]=30;
+monthdays[4]=31;
+monthdays[5]=30;
+monthdays[6]=31;
+monthdays[7]=31;
+monthdays[8]=30;
+monthdays[9]=31;
+monthdays[10]=30;
+monthdays[11]=31;
+todayDate=new Date();
+thisday=todayDate.getDay();
+thismonth=todayDate.getMonth();
+thisdate=todayDate.getDate();
+thisyear=todayDate.getYear();
+thisyear = thisyear % 100;
+thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+if (((thisyear % 4 == 0) 
+&& !(thisyear % 100 == 0))
+||(thisyear % 400 == 0)) monthdays[1]++;
+startspaces=thisdate;
+while (startspaces > 7) startspaces-=7;
+startspaces = thisday - startspaces + 1;
+if (startspaces < 0) startspaces+=7;
+document.write("<table border=2 bgcolor=white ");
+document.write("bordercolor=black><font color=black>");
+document.write("<tr><td colspan=7><center><strong>" 
++ monthnames[thismonth] + " " + thisyear 
++ "</strong></center></font></td></tr>");
+document.write("<tr>");
+document.write("<td align=center>Su</td>");
+document.write("<td align=center>M</td>");
+document.write("<td align=center>Tu</td>");
+document.write("<td align=center>W</td>");
+document.write("<td align=center>Th</td>");
+document.write("<td align=center>F</td>");
+document.write("<td align=center>Sa</td>"); 
+document.write("</tr>");
+document.write("<tr>");
+for (s=0;s<startspaces;s++) {
+document.write("<td> </td>");
+}
+count=1;
+while (count <= monthdays[thismonth]) {
+for (b = startspaces;b<7;b++) {
+linktrue=false;
+document.write("<td>");
+for (c=0;c<linkdays.length;c++) {
+if (linkdays[c] != null) {
+if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+document.write("<a href=\"" + linkdays[c][2] + "\">");
+linktrue=true;
+      }
+   }
+}
+if (count==thisdate) {
+document.write("<font color='FF0000'><strong>");
+}
+if (count <= monthdays[thismonth]) {
+document.write(count);
+}
+else {
+document.write(" ");
+}
+if (count==thisdate) {
+document.write("</strong></font>");
+}
+if (linktrue)
+document.write("</a>");
+document.write("</td>");
+count++;
+}
+document.write("</tr>");
+document.write("<tr>");
+startspaces=0;
+}
+document.write("</table></p>");
+// End -->
+</script>
+</center>
+<a target="_blank" href="http://free-web-tools.com/category/codes/" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute">free codes</a><a target="_blank" href="http://www.htmlfreecodes.com" style="font-size: 8pt; text-decoration: none">Html Codes</a>
